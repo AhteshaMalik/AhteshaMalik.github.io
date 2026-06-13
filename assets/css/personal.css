@@ -1,0 +1,85 @@
+/* Personal-site overrides for Ahtesham Ali
+   Layered on top of the theme's compiled Tailwind so the look & animations stay intact. */
+
+/* Hero logo: starts large & centred, then Flips into the header on scroll.
+   The header landing width is set inline by the intro script (240px desktop). */
+.logo-img {
+  max-width: 600px;
+}
+.logo-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+/* Keep the flipped logo vertically tidy in the header */
+.logo-holder {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Skills / tech-stack pills */
+.stack-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none !important;
+}
+.stack-list li::marker { content: ""; }
+/* The theme adds a white 8x8 ::before square + a dotted ul::before line to
+   every list item inside .rich-text. Neutralise both for the stack pills. */
+.stack-list::before { content: none !important; display: none !important; }
+.stack-list li {
+  list-style: none !important;
+  padding-left: 14px !important;
+  position: static !important;
+}
+.stack-list li::before { content: none !important; display: none !important; }
+.stack-list li {
+  border: 1px solid rgba(129, 185, 241, 0.55);
+  color: #eaf3fb;
+  border-radius: 20px;
+  padding: 4px 14px;
+  font-size: 13px;
+  line-height: 22px;
+  font-family: "Open Sans", sans-serif;
+  white-space: nowrap;
+}
+
+/* Experience rows */
+.xp-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+.xp-row .xp-role { font-weight: 600; color: #ffffff; }
+.xp-row .xp-co   { color: #81b9f1; }
+.xp-row .xp-date { color: #8a8a8a; font-size: 14px; white-space: nowrap; }
+@media (max-width: 640px) {
+  .xp-row { flex-direction: column; gap: 4px; }
+}
+
+/* Contact buttons */
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  margin-top: 8px;
+}
+.contact-links a {
+  border: 1px solid #81b9f1;
+  color: #ffffff;
+  border-radius: 24px;
+  padding: 8px 22px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background-color .4s ease, color .4s ease;
+  font-family: "Open Sans", sans-serif;
+}
+.contact-links a:hover { background-color: #62C3FF; color: #04121f; }

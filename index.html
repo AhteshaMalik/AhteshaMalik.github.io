@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en-US" class="no-js">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ahtesham Ali — AI Engineer</title>
+    <meta name="description"
+        content="Ahtesham Ali is an AI Engineer who turns AI ideas into production systems — computer vision, LLM/RAG, and AI agents that cut costs and unlock revenue for businesses.">
+
+    <!-- Fonts (Adobe Typekit: Open Sans / Bebas Neue) -->
+    <link rel="stylesheet" href="https://use.typekit.net/bjk3lkx.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/wp-blocks.css">
+    <link rel="stylesheet" href="assets/css/core.css">
+    <link rel="stylesheet" href="assets/css/swiper.css">
+    <link rel="stylesheet" href="assets/css/theme.css">
+    <link rel="stylesheet" href="assets/css/personal.css">
+
+    <!-- Favicons -->
+    <link rel="icon" href="assets/images/favicon-32.png" sizes="32x32">
+    <link rel="icon" href="assets/images/favicon-192.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="assets/images/favicon-180.png">
+
+    <!-- jQuery -->
+    <script src="assets/js/vendor/jquery.min.js"></script>
+    <script src="assets/js/vendor/jquery-migrate.min.js"></script>
+    <!-- Smooth scroll + GSAP + plugins -->
+    <script src="assets/js/vendor/SmoothScroll.js"></script>
+    <script src="assets/js/vendor/gsap.min.js"></script>
+    <script src="assets/js/vendor/scrollreveal.min.js"></script>
+    <script src="assets/js/vendor/swiper.min.js"></script>
+    <script src="assets/js/vendor/ScrollTrigger.min.js"></script>
+    <script src="assets/js/vendor/Flip.min.js"></script>
+    <script src="assets/js/vendor/ScrollSmoother.min.js"></script>
+    <!-- Theme behaviour (accordions etc.) -->
+    <script src="assets/js/theme.js"></script>
+</head>
+
+<body class="home wp-custom-logo wp-theme-genesis-ai disable-default-accordion">
+
+    <img class="fixed w-full pointer-events-none" aria-hidden="true" src="assets/images/genesis-bg.jpg" alt="" />
+
+    <div class="fixed bottom-[4vh] w-full flex justify-center" id="scroll-cta">
+        <img src="assets/images/scroll-cta2.svg" alt="scroll" class="w-[31px] h-auto">
+    </div>
+
+    <div id="smooth-wrapper">
+        <div id="smooth-content" class="relative">
+
+            <section id="intro" class="h-svh w-full relative z-20 flex items-center justify-center px-12 mt-[-1px]">
+                <div class="logo-img max-w-[600px] w-full mt-[-40px]">
+                    <img src="assets/images/ahtesham-logo.svg" alt="Ahtesham Ali" class="w-full opacity-0">
+                </div>
+            </section>
+
+            <!-- Header -->
+            <header class="pt-[57px] pb-[42px] z-10">
+                <div class="container-center">
+                    <div class="flex justify-between items-center">
+                        <a href="index.html" class="logo-holder"></a>
+                        <a href="#contact"
+                            class="group rounded-[20px] border-[#81b9f1] text-white border-solid border-[1px] px-[20px] py-[3px] text-[13px] leading-[28px] -top-4 relative hover:bg-blue transition-colors duration-500 whitespace-nowrap ml-6">Get
+                            in touch</a>
+                    </div>
+                </div>
+            </header>
+            <!-- END header -->
+
+            <script>
+                gsap.registerPlugin(ScrollTrigger, ScrollSmoother, Flip);
+
+                ScrollSmoother.create({
+                    wrapper: "#smooth-wrapper",
+                    content: "#smooth-content",
+                    smooth: 0.85,
+                    effects: true,
+                    smoothTouch: 0.1,
+                });
+
+                window.onload = function () {
+                    const logoHolder = document.querySelector(".logo-holder");
+                    const logoImg = document.querySelector(".logo-img");
+
+                    const state = Flip.getState(logoImg);
+                    logoImg.style.width = window.innerWidth < 600 ? "200px" : "240px";
+                    logoHolder.appendChild(logoImg);
+
+                    Flip.from(state, {
+                        scrollTrigger: {
+                            trigger: "#intro",
+                            start: "top top",
+                            end: "+=40% top",
+                            scrub: true,
+                        },
+                        ease: "none",
+                    });
+
+                    // fade in logo on page load
+                    gsap.fromTo(logoImg.querySelector('img'), {
+                        opacity: 0,
+                        scale: 1.3,
+                    }, {
+                        opacity: 1,
+                        scale: 1,
+                        duration: 1.15,
+                        ease: 'power3.inOut',
+                        onUpdate: ScrollTrigger.refresh
+                    });
+
+                    ScrollTrigger.refresh();
+
+                    // fade out scroll CTA on scroll
+                    gsap.to("#scroll-cta", {
+                        opacity: 0,
+                        y: -50,
+                        ease: 'none',
+                        scrollTrigger: { trigger: "#intro", start: "top top", end: "+=200", scrub: true }
+                    });
+
+                    // yoyo animate scroll cta
+                    gsap.to("#scroll-cta img", {
+                        y: -15, duration: 1.3, repeat: -1, yoyo: true, ease: "power1.inOut"
+                    });
+                };
+            </script>
+
+            <main class="main flex-1 bg-light-grey-2 overflow-clip z-10">
+                <div class="container-center">
+                    <div>
+                        <div class="flex items-start lg:flex-row flex-col gap-16 rich-text max-w-none content-area">
+                            <div class="w-full">
+
+                                <!-- ABOUT -->
+                                <div class="container-outer relative mx-auto w-full h-full flex justify-center !mb-[30px] lg:!mb-[40px]" data-sr="">
+                                    <div class="w-full h-full z-10 overflow-hidden" style="max-width:900px;">
+                                        <div class="container-inner w-full h-full flex flex-col !m-0 light justify-start">
+                                            <p>I'm <strong>Ahtesham Ali</strong> — an AI Engineer who turns AI ideas into production systems that solve real business problems. Over the last 2+ years I've built and shipped computer vision, LLM, and AI-agent solutions that cut operating costs, automate manual work, and unlock revenue.</p>
+                                            <p>I work end-to-end: from research and data, through modelling and APIs, to deployment that scales and survives real users. If it ships and moves a business metric, that's the work I care about.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- WHAT I DO -->
+                                <div class="container-outer relative mx-auto w-full h-full flex justify-center !mb-[30px] lg:!mb-[40px]" data-sr="">
+                                    <div class="w-full h-full z-10 overflow-hidden" style="max-width:900px;">
+                                        <div class="container-inner w-full h-full flex flex-col !m-0 light justify-start">
+                                            <h2 class="wp-block-heading has-text-align-center"><strong>What I Do</strong></h2>
+
+                                            <h3 class="wp-block-heading"><strong>Computer Vision</strong></h3>
+                                            <p>Real-time, multi-stream video — object detection, face and vehicle recognition, OCR and anomaly detection. Built and optimised with YOLOv8, Deepstream, Vision Transformers and TensorRT.</p>
+
+                                            <h3 class="wp-block-heading"><strong>LLM &amp; RAG Systems</strong></h3>
+                                            <p>Chatbots, knowledge assistants and database-querying agents that actually answer correctly. OpenAI, Gemini, Llama 3.3, LangChain, fine-tuning and vector databases.</p>
+
+                                            <h3 class="wp-block-heading"><strong>AI Agents &amp; Automation</strong></h3>
+                                            <p>Voice agents, multi-channel outreach and booking workflows, and web automation that run around the clock — built with Twilio, Deepgram, n8n and Playwright.</p>
+
+                                            <h3 class="wp-block-heading"><strong>Deployment &amp; MLOps</strong></h3>
+                                            <p>From notebook to production — FastAPI services, Docker, AWS and Runpod, with the APIs, monitoring and database integration that make a model a product.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- SELECTED WORK -->
+                                <div class="container-outer relative mx-auto w-full h-full flex justify-center !mb-[30px] lg:!mb-[40px]" data-sr="">
+                                    <div class="w-full h-full z-10 overflow-hidden" style="max-width:900px;">
+                                        <div class="container-inner w-full h-full flex flex-col !m-0 light justify-start">
+                                            <h2 class="wp-block-heading has-text-align-center"><strong>Selected Work</strong></h2>
+                                            <p>A few systems I've built and shipped. Tap any project for detail.</p>
+
+                                            <div class="w-full m-0">
+                                                <div class="flex flex-col">
+
+                                                    <div class="accordion-item cursor-pointer pb-4">
+                                                        <div class="accordion-heading not-prose group flex justify-between py-6 gap-4">
+                                                            <p class="text-[21px] leading-[110%] font-OpenSans font-semibold text-whitest transition-colors duration-200 !mb-0">Stackfuse — AI Lead-Generation SaaS</p>
+                                                            <span class="text-white accordion-arrow toggle transition-transform duration-[350ms] relative w-[20px] top-[-2px]"><span class="absolute closed">+</span><span class="absolute open opacity-0">&#8211;</span></span>
+                                                        </div>
+                                                        <div class="accordion-body hidden overflow-hidden max-w-none mt-3">
+                                                            <div class="p-[25px] bg-gray-200 text-black no-sr">
+                                                                <p>A multi-channel outreach platform that personalises messages, replies to leads and automatically books meetings. Drove a 40% increase in lead response rates, automated 80% of meeting scheduling, and scaled to 5,000+ leads/month.</p>
+                                                                <p><em>LangChain · FastAPI · Scrapling · Qdrant · Vapi · n8n · PostgreSQL · MongoDB</em></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="accordion-item cursor-pointer pb-4">
+                                                        <div class="accordion-heading not-prose group flex justify-between py-6 gap-4">
+                                                            <p class="text-[21px] leading-[110%] font-OpenSans font-semibold text-whitest transition-colors duration-200 !mb-0">Suburb Security Platform</p>
+                                                            <span class="text-white accordion-arrow toggle transition-transform duration-[350ms] relative w-[20px] top-[-2px]"><span class="absolute closed">+</span><span class="absolute open opacity-0">&#8211;</span></span>
+                                                        </div>
+                                                        <div class="accordion-body hidden overflow-hidden max-w-none mt-3">
+                                                            <div class="p-[25px] bg-gray-200 text-black no-sr">
+                                                                <p>Five computer-vision models running across 7–8 live camera streams on a single 24GB GPU — 95% accuracy, 30 FPS per stream, 50% lower latency with TensorRT, processing 1,000+ hours of footage daily in production.</p>
+                                                                <p><em>YOLOv8 · Deepface · Vision Transformer · PaddleOCR · Deepstream · FastAPI</em></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="accordion-item cursor-pointer pb-4">
+                                                        <div class="accordion-heading not-prose group flex justify-between py-6 gap-4">
+                                                            <p class="text-[21px] leading-[110%] font-OpenSans font-semibold text-whitest transition-colors duration-200 !mb-0">AI Voice Calling Agent</p>
+                                                            <span class="text-white accordion-arrow toggle transition-transform duration-[350ms] relative w-[20px] top-[-2px]"><span class="absolute closed">+</span><span class="absolute open opacity-0">&#8211;</span></span>
+                                                        </div>
+                                                        <div class="accordion-body hidden overflow-hidden max-w-none mt-3">
+                                                            <div class="p-[25px] bg-gray-200 text-black no-sr">
+                                                                <p>An intelligent voice agent that handles automated phone conversations at a 90% success rate and sub-2-second response time, processing 2,000+ calls/month — roughly 65% cheaper than human agents.</p>
+                                                                <p><em>Deepgram · Twilio · Gemini · Python</em></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="accordion-item cursor-pointer pb-4">
+                                                        <div class="accordion-heading not-prose group flex justify-between py-6 gap-4">
+                                                            <p class="text-[21px] leading-[110%] font-OpenSans font-semibold text-whitest transition-colors duration-200 !mb-0">Custom AI Document Parser</p>
+                                                            <span class="text-white accordion-arrow toggle transition-transform duration-[350ms] relative w-[20px] top-[-2px]"><span class="absolute closed">+</span><span class="absolute open opacity-0">&#8211;</span></span>
+                                                        </div>
+                                                        <div class="accordion-body hidden overflow-hidden max-w-none mt-3">
+                                                            <div class="p-[25px] bg-gray-200 text-black no-sr">
+                                                                <p>A document system that intelligently extracts and edits text while preserving 99% of original formatting — 500+ docs/day at 98% extraction accuracy across PDF, Word and images, cutting manual processing by 75%.</p>
+                                                                <p><em>OpenAI · FastAPI · Python</em></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="accordion-item cursor-pointer pb-4">
+                                                        <div class="accordion-heading not-prose group flex justify-between py-6 gap-4">
+                                                            <p class="text-[21px] leading-[110%] font-OpenSans font-semibold text-whitest transition-colors duration-200 !mb-0">Text-to-Video Generation Pipeline</p>
+                                                            <span class="text-white accordion-arrow toggle transition-transform duration-[350ms] relative w-[20px] top-[-2px]"><span class="absolute closed">+</span><span class="absolute open opacity-0">&#8211;</span></span>
+                                                        </div>
+                                                        <div class="accordion-body hidden overflow-hidden max-w-none mt-3">
+                                                            <div class="p-[25px] bg-gray-200 text-black no-sr">
+                                                                <p>An end-to-end multimodal pipeline that generates high-quality video from text descriptions, with an automated workflow that reduced generation time by 60% through optimised GPU utilisation.</p>
+                                                                <p><em>Llama 3.3 · Hunyuan T2V · Kokoro T2S · FastAPI · Runpod</em></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="accordion-item cursor-pointer pb-4">
+                                                        <div class="accordion-heading not-prose group flex justify-between py-6 gap-4">
+                                                            <p class="text-[21px] leading-[110%] font-OpenSans font-semibold text-whitest transition-colors duration-200 !mb-0">Attention Heatmap Generator</p>
+                                                            <span class="text-white accordion-arrow toggle transition-transform duration-[350ms] relative w-[20px] top-[-2px]"><span class="absolute closed">+</span><span class="absolute open opacity-0">&#8211;</span></span>
+                                                        </div>
+                                                        <div class="accordion-body hidden overflow-hidden max-w-none mt-3">
+                                                            <div class="p-[25px] bg-gray-200 text-black no-sr">
+                                                                <p>Captures website screenshots, generates attention-based heatmaps, and produces AI-powered UX analysis. Processed 200+ websites with 90% accuracy in flagging critical design issues, cutting manual UX review by 70%.</p>
+                                                                <p><em>Playwright · Gemini · Computer Vision · Python</em></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- EXPERIENCE -->
+                                <div class="container-outer relative mx-auto w-full h-full flex justify-center !mb-[30px] lg:!mb-[40px]" data-sr="">
+                                    <div class="w-full h-full z-10 overflow-hidden" style="max-width:900px;">
+                                        <div class="container-inner w-full h-full flex flex-col !m-0 light justify-start">
+                                            <h2 class="wp-block-heading has-text-align-center"><strong>Experience</strong></h2>
+                                            <div class="xp-row"><span><span class="xp-role">AI Engineer</span> · <span class="xp-co">miniByte.ai</span></span><span class="xp-date">Sep 2024 – Present</span></div>
+                                            <div class="xp-row"><span><span class="xp-role">AI Software Engineer</span> · <span class="xp-co">Stackfuse</span></span><span class="xp-date">Jul 2025 – Present</span></div>
+                                            <div class="xp-row"><span><span class="xp-role">Machine Learning Engineer</span> · <span class="xp-co">TechloSet Solutions</span></span><span class="xp-date">2023 – 2024</span></div>
+                                            <div class="xp-row"><span><span class="xp-role">Co-Founder</span> · <span class="xp-co">Dev X One-Stop Solution</span></span><span class="xp-date">2022 – 2024</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- TECH STACK -->
+                                <div class="container-outer relative mx-auto w-full h-full flex justify-center !mb-[30px] lg:!mb-[40px]" data-sr="">
+                                    <div class="w-full h-full z-10 overflow-hidden" style="max-width:900px;">
+                                        <div class="container-inner w-full h-full flex flex-col !m-0 light justify-start">
+                                            <h2 class="wp-block-heading has-text-align-center"><strong>Tech Stack</strong></h2>
+                                            <ul class="stack-list not-prose">
+                                                <li>Python</li><li>PyTorch</li><li>TensorFlow</li><li>Transformers</li><li>Hugging Face</li><li>LangChain</li><li>YOLOv8</li><li>TensorRT</li><li>Deepstream</li><li>OpenAI</li><li>Gemini</li><li>Llama 3.3</li><li>RAG</li><li>Fine-Tuning</li><li>FastAPI</li><li>Docker</li><li>AWS</li><li>Runpod</li><li>PostgreSQL</li><li>MongoDB</li><li>Qdrant</li><li>n8n</li><li>Twilio</li><li>Deepgram</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- CONTACT -->
+                                <div id="contact" class="container-outer relative mx-auto w-full h-full flex justify-center !mb-[30px] lg:!mb-[40px]" data-sr="">
+                                    <div class="w-full h-full z-10 overflow-hidden" style="max-width:900px;">
+                                        <div class="container-inner w-full h-full flex flex-col !m-0 light justify-start">
+                                            <h2 class="wp-block-heading has-text-align-center"><strong>Get In Touch</strong></h2>
+                                            <p class="has-text-align-center">Have an AI idea stuck at the prototype stage, or a manual process bleeding time and money? Let's build something that ships.</p>
+                                            <div class="contact-links">
+                                                <a href="mailto:ahteshamali3222@gmail.com">Email</a>
+                                                <a href="https://www.linkedin.com/in/ahteshamali-3a11191bb" target="_blank" rel="noopener">LinkedIn</a>
+                                                <a href="https://github.com/AhteshaMalik" target="_blank" rel="noopener">GitHub</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Footer -->
+            <footer class="pt-[49px] pb-[28px] relative z-10">
+                <div class="container-center">
+                    <div class="flex items-center justify-center flex-row md:gap-5 gap-8">
+                        <p class="text-gray text-center">© 2026 Ahtesham Ali</p>
+                    </div>
+                </div>
+            </footer>
+
+        </div> <!-- END #smooth-content -->
+    </div> <!-- END #smooth-wrapper -->
+
+    <script src="assets/js/core.js"></script>
+    <script src="assets/js/datasr.js"></script>
+    <script src="assets/js/accessibility.js"></script>
+</body>
+
+</html>
