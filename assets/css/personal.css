@@ -43,6 +43,26 @@ footer .text-gray { color: #e6e6e6 !important; }
   align-items: center;
 }
 
+/* About block — photo floats in the side gutter, text stays put */
+.about-photo-side {
+  position: absolute;
+  top: 50%;
+  left: calc(50% - 450px - 250px); /* 450px = half of 900px text column, then push out into the gutter */
+  transform: translateY(-30%);
+  width: 220px;
+  height: 260px;
+  border-radius: 18px;
+  object-fit: cover;
+  object-position: center top;
+  border: 2px solid rgba(129, 185, 241, 0.55);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
+  z-index: 15;
+}
+/* Hide on narrower screens where the gutter disappears */
+@media (max-width: 1380px) {
+  .about-photo-side { display: none; }
+}
+
 /* Skills / tech-stack pills */
 .stack-list {
   display: flex;
