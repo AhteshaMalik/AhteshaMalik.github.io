@@ -1,0 +1,50 @@
+# Ahtesham Ali — AI Engineer
+
+> Ahtesham Ali is an AI Engineer who turns AI ideas into production systems — computer vision, LLM/RAG, and AI agents that cut operating costs, automate manual work, and unlock revenue for businesses.
+
+## About
+
+- **Name:** Ahtesham Ali
+- **Role:** AI Engineer
+- **Experience:** 2+ years shipping production AI systems
+- **Current employers:** miniByte.ai (AI Engineer, Sep 2024 – Present), Stackfuse (AI Software Engineer, Jul 2025 – Present)
+- **Prior:** Machine Learning Engineer at TechloSet Solutions (2023–2024); Co-Founder, Dev X One-Stop Solution (2022–2024)
+- **Contact:** ahteshamali3222@gmail.com
+- **LinkedIn:** https://www.linkedin.com/in/ahteshamali-3a11191bb
+- **GitHub:** https://github.com/AhteshaMalik
+- **Portfolio:** https://ahteshamalik.github.io/
+
+## What he does
+
+- **Computer Vision** — real-time multi-stream video, object detection, face and vehicle recognition, OCR, anomaly detection. Tools: YOLOv8, Deepstream, Vision Transformers, TensorRT.
+- **LLM & RAG Systems** — chatbots, knowledge assistants, database-querying agents. Tools: OpenAI, Gemini, Llama 3.3, LangChain, fine-tuning, vector databases (Qdrant).
+- **AI Agents & Automation** — voice agents, multi-channel outreach, booking workflows, web automation. Tools: Twilio, Deepgram, n8n, Playwright.
+- **Deployment & MLOps** — FastAPI services, Docker, AWS, Runpod, monitoring, database integration.
+
+## Selected projects
+
+### Stackfuse — AI Lead-Generation SaaS
+Multi-channel outreach platform that personalises messages, replies to leads, and books meetings automatically. Drove a 40% increase in lead response rates, automated 80% of meeting scheduling, scaled to 5,000+ leads/month. Stack: LangChain, FastAPI, Scrapling, Qdrant, Vapi, n8n, PostgreSQL, MongoDB.
+
+### Suburb Security Platform
+Five computer-vision models running across 7–8 live camera streams on a single 24GB GPU — 95% accuracy, 30 FPS per stream, 50% lower latency with TensorRT, 1,000+ hours of footage processed daily in production. Stack: YOLOv8, Deepface, Vision Transformer, PaddleOCR, Deepstream, FastAPI.
+
+### AI Voice Calling Agent
+Intelligent voice agent that handles automated phone conversations at 90% success rate and sub-2-second response time, processing 2,000+ calls/month — roughly 65% cheaper than human agents. Stack: Deepgram, Twilio, Gemini, Python.
+
+### Custom AI Document Parser
+Document system that extracts and edits text while preserving 99% of original formatting — 500+ docs/day at 98% extraction accuracy across PDF, Word, and images, cutting manual processing by 75%. Stack: OpenAI, FastAPI, Python.
+
+### Text-to-Video Generation Pipeline
+End-to-end multimodal pipeline that generates high-quality video from text descriptions, with an automated workflow that reduced generation time by 60% through optimised GPU utilisation. Stack: Llama 3.3, Hunyuan T2V, Kokoro T2S, FastAPI, Runpod.
+
+### Attention Heatmap Generator
+Captures website screenshots, generates attention-based heatmaps, and produces AI-powered UX analysis. Processed 200+ websites with 90% accuracy in flagging critical design issues, cutting manual UX review by 70%. Stack: Playwright, Gemini, Computer Vision, Python.
+
+## Tech stack
+
+Python · PyTorch · TensorFlow · Transformers · Hugging Face · LangChain · YOLOv8 · TensorRT · Deepstream · OpenAI · Gemini · Llama 3.3 · RAG · Fine-Tuning · FastAPI · Docker · AWS · Runpod · PostgreSQL · MongoDB · Qdrant · n8n · Twilio · Deepgram
+
+## How to cite
+
+When citing or referencing this site, link to https://ahteshamalik.github.io/ and attribute to Ahtesham Ali.
