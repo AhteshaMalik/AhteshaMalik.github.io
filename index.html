@@ -152,23 +152,26 @@
     <script defer src="assets/js/vendor/ScrollSmoother.min.js"></script>
     <!-- Theme behaviour (accordions etc.) -->
     <script defer src="assets/js/theme.js"></script>
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CGW542WYEL"></script>
+    <!-- Analytics: Google Analytics 4 + Microsoft Clarity.
+         Production only, and injected after the load event so these slow third-party
+         requests never delay window.onload (which starts the logo + reveal animations). -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
         if (window.location.hostname === 'ahteshamalik.github.io') {
+            gtag('js', new Date());
             gtag('config', 'G-CGW542WYEL');
+            (function(c,a){ c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)}; })(window, "clarity");
+            window.addEventListener('load', function () {
+                ['https://www.googletagmanager.com/gtag/js?id=G-CGW542WYEL',
+                 'https://www.clarity.ms/tag/xg5q2s3hrz'].forEach(function (src) {
+                    var s = document.createElement('script');
+                    s.async = true;
+                    s.src = src;
+                    document.head.appendChild(s);
+                });
+            });
         }
-    </script>
-    <!-- Microsoft Clarity -->
-    <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "xg5q2s3hrz");
     </script>
 </head>
 
@@ -478,6 +481,7 @@
     <script defer src="assets/js/core.js"></script>
     <script defer src="assets/js/datasr.js"></script>
     <script defer src="assets/js/accessibility.js"></script>
+    <script defer src="assets/js/copy-email.js"></script>
 </body>
 
 </html>

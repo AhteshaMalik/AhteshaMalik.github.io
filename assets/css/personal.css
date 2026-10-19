@@ -170,3 +170,30 @@ footer .text-gray { color: #e6e6e6 !important; }
   .contact-links { gap: 10px; }
   .contact-links a { padding: 10px 20px; }
 }
+
+/* "Email copied" toast shown when a mailto: link is clicked (see copy-email.js) */
+.email-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  z-index: 1000;
+  width: max-content;
+  max-width: calc(100vw - 32px);
+  transform: translate(-50%, 20px);
+  opacity: 0;
+  pointer-events: none;
+  background: #0b1a2a;
+  border: 1px solid #81b9f1;
+  border-radius: 14px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.55);
+  color: #eaf3fb;
+  padding: 12px 18px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: center;
+  transition: opacity .3s ease, transform .3s ease;
+}
+.email-toast strong { display: block; color: #81b9f1; font-weight: 600; overflow-wrap: anywhere; }
+.email-toast span { display: block; margin-top: 2px; font-size: 12px; color: #c9d6e3; }
+.email-toast.is-visible { opacity: 1; transform: translate(-50%, 0); }
