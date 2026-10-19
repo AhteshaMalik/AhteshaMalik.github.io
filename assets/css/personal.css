@@ -153,7 +153,7 @@ footer .text-gray { color: #e6e6e6 !important; }
 
   /* Keep logo + "Get in touch" on one line on narrow phones */
   header { padding-top: 40px; padding-bottom: 32px; }
-  header a[href="#contact"] { padding-left: 14px; padding-right: 14px; margin-left: 12px; }
+  header .header-cta { padding-left: 14px; padding-right: 14px; margin-left: 12px; }
 
   /* Project accordions: slightly smaller titles, roomier tap rows */
   .accordion-heading { padding-top: 18px; padding-bottom: 18px; }
