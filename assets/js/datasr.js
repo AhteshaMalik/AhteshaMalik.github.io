@@ -1,7 +1,8 @@
 var $ = jQuery;
 var dataSR;
 
-$(window).on('load', function() {
+// DOM ready, not window load: don't keep content hidden while images download
+$(function() {
     dataSR = ScrollReveal({
     duration: 800,
     distance: "70px",

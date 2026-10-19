@@ -132,6 +132,9 @@
     <link rel="preload" href="https://use.typekit.net/bjk3lkx.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://use.typekit.net/bjk3lkx.css"></noscript>
 
+    <!-- Hero logo is the first thing visitors see: fetch it before anything else -->
+    <link rel="preload" href="assets/images/ahtesham-logo.svg" as="image" fetchpriority="high">
+
     <!-- Styles -->
     <link rel="stylesheet" href="assets/css/wp-blocks.css">
     <link rel="stylesheet" href="assets/css/core.css">
@@ -157,7 +160,7 @@
     <script defer src="assets/js/theme.js"></script>
     <!-- Analytics: Google Analytics 4 + Microsoft Clarity.
          Production only, and injected after the load event so these slow third-party
-         requests never delay window.onload (which starts the logo + reveal animations). -->
+         requests never compete with the page's own files. -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -180,7 +183,7 @@
 
 <body class="home wp-custom-logo wp-theme-genesis-ai disable-default-accordion">
 
-    <img class="fixed w-full pointer-events-none" aria-hidden="true" src="assets/images/genesis-bg.jpg" alt="" width="3000" height="1656" fetchpriority="high" />
+    <img class="fixed w-full pointer-events-none" aria-hidden="true" src="assets/images/genesis-bg.jpg" alt="" width="3000" height="1656" decoding="async" />
 
     <div class="fixed bottom-[4vh] w-full flex justify-center" id="scroll-cta">
         <img src="assets/images/scroll-cta2.svg" alt="scroll" class="w-[31px] h-auto">
@@ -192,7 +195,7 @@
             <section id="intro" class="h-svh w-full relative z-20 flex items-center justify-center px-12 mt-[-1px]">
                 <h1 class="sr-only">Ahtesham Ali — AI Engineer specialising in Computer Vision, LLM/RAG, and AI Agents</h1>
                 <div class="logo-img max-w-[600px] w-full mt-[-40px]">
-                    <img src="assets/images/ahtesham-logo.svg" alt="Ahtesham Ali — AI Engineer" class="w-full opacity-0">
+                    <img src="assets/images/ahtesham-logo.svg" alt="Ahtesham Ali — AI Engineer" class="w-full" width="4551" height="1393" fetchpriority="high" onload="this.classList.add('is-loaded')">
                 </div>
             </section>
 
@@ -222,7 +225,7 @@
                     smoothTouch: 0.1,
                 });
 
-                window.onload = function () {
+                (function () {
                     const logoHolder = document.querySelector(".logo-holder");
                     const logoImg = document.querySelector(".logo-img");
 
@@ -240,19 +243,12 @@
                         ease: "none",
                     });
 
-                    // fade in logo on page load
-                    gsap.fromTo(logoImg.querySelector('img'), {
-                        opacity: 0,
-                        scale: 1.3,
-                    }, {
-                        opacity: 1,
-                        scale: 1,
-                        duration: 1.15,
-                        ease: 'power3.inOut',
-                        onUpdate: ScrollTrigger.refresh
-                    });
+                    // The logo fade-in itself is a CSS animation (personal.css), so it
+                    // doesn't have to wait for these scripts to download.
 
                     ScrollTrigger.refresh();
+                    // Re-measure once images/fonts have settled the layout
+                    window.addEventListener("load", function () { ScrollTrigger.refresh(); });
 
                     // fade out scroll CTA on scroll
                     gsap.to("#scroll-cta", {
@@ -266,7 +262,7 @@
                     gsap.to("#scroll-cta img", {
                         y: -15, duration: 1.3, repeat: -1, yoyo: true, ease: "power1.inOut"
                     });
-                };
+                })();
             });
             </script>
 

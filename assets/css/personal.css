@@ -208,3 +208,26 @@ body:not(.wp-admin),
 .prose-li\:font-body :is(:where(li):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
   font-family: courier-new, "Courier New", Courier, monospace;
 }
+
+/* Hero logo fade-in. Pure CSS (was a GSAP tween on window.onload) so it plays
+   as soon as the SVG arrives instead of waiting for every script and image. */
+.logo-img img { opacity: 0; }
+.logo-img img.is-loaded { animation: logo-in 1.15s cubic-bezier(0.65, 0, 0.35, 1) both; }
+@keyframes logo-in {
+  from { opacity: 0; transform: scale(1.3); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* Safety net: core.css hides scroll-reveal content until ScrollReveal runs.
+   If the scripts are slow (bad mobile network) or fail, show it anyway after
+   2.5s. Once ScrollReveal attaches (data-sr-id) it takes over as usual. */
+@keyframes sr-failsafe { to { visibility: visible; } }
+[data-sr]:not([data-sr-id]),
+.rich-text:not([data-sr-id]),
+.wp-block-group:not([data-sr-id]),
+.sr-down:not([data-sr-id]) {
+  animation: sr-failsafe 0s 2.5s forwards;
+}
+@media (prefers-reduced-motion: reduce) {
+  .logo-img img.is-loaded { animation: none; opacity: 1; }
+}
