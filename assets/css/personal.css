@@ -231,3 +231,8 @@ body:not(.wp-admin),
 @media (prefers-reduced-motion: reduce) {
   .logo-img img.is-loaded { animation: none; opacity: 1; }
 }
+
+/* The only two rules this page used from wp-blocks.css (no longer loaded,
+   it was a render-blocking request for ~20KB of unused WordPress styles). */
+body { padding: 0; }
+.has-text-align-center { text-align: center; }
