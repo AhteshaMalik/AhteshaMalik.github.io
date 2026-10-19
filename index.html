@@ -219,7 +219,7 @@
                     const logoImg = document.querySelector(".logo-img");
 
                     const state = Flip.getState(logoImg);
-                    logoImg.style.width = window.innerWidth < 600 ? "200px" : "240px";
+                    logoImg.style.width = window.innerWidth < 400 ? "160px" : window.innerWidth < 600 ? "200px" : "240px";
                     logoHolder.appendChild(logoImg);
 
                     Flip.from(state, {

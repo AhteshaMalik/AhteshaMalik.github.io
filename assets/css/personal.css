@@ -129,3 +129,44 @@ footer .text-gray { color: #e6e6e6 !important; }
   font-family: "Open Sans", sans-serif;
 }
 .contact-links a:hover { background-color: #62C3FF; color: #04121f; }
+
+/* ---------- Mobile & tablet ---------- */
+
+/* Below the gutter breakpoint the side photo can't float, so show it as a
+   centred portrait above the About text instead of hiding it. */
+@media (max-width: 1380px) {
+  .about-block { flex-direction: column; align-items: center; }
+  .about-photo-side {
+    display: block;
+    position: static;
+    transform: none;
+    width: 150px;
+    height: 176px;
+    margin: 0 auto 24px;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Give the hero logo more of the screen width */
+  #intro { padding-left: 24px; padding-right: 24px; }
+
+  /* Keep logo + "Get in touch" on one line on narrow phones */
+  header { padding-top: 40px; padding-bottom: 32px; }
+  header a[href="#contact"] { padding-left: 14px; padding-right: 14px; margin-left: 12px; }
+
+  /* Project accordions: slightly smaller titles, roomier tap rows */
+  .accordion-heading { padding-top: 18px; padding-bottom: 18px; }
+  .accordion-heading p { font-size: 18px !important; line-height: 125% !important; }
+  .accordion-body > div { padding: 18px !important; }
+
+  /* Tech-stack pills: the theme's 16px li margin makes rows sprawl */
+  .stack-list { gap: 8px; }
+  .stack-list li { margin: 0 !important; font-size: 12px; padding: 3px 12px !important; }
+
+  .xp-row { padding: 12px 0; }
+  .xp-row .xp-date { font-size: 13px; }
+
+  .contact-links { gap: 10px; }
+  .contact-links a { padding: 10px 20px; }
+}
