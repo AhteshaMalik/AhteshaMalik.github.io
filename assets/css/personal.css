@@ -197,3 +197,14 @@ footer .text-gray { color: #e6e6e6 !important; }
 .email-toast strong { display: block; color: #81b9f1; font-weight: 600; overflow-wrap: anywhere; }
 .email-toast span { display: block; margin-top: 2px; font-size: 12px; color: #c9d6e3; }
 .email-toast.is-visible { opacity: 1; transform: translate(-50%, 0); }
+
+/* The Adobe Fonts kit (courier-new) now loads without blocking first paint.
+   Until it arrives, fall back to the system's Courier New (Windows/macOS/iOS),
+   which is the same typeface, so there's no visible font swap on those devices.
+   Selectors mirror the courier-new rules in theme.css. */
+body:not(.wp-admin),
+.font-body,
+.prose-p\:font-body :is(:where(p):not(:where([class~="not-prose"],[class~="not-prose"] *))),
+.prose-li\:font-body :is(:where(li):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  font-family: courier-new, "Courier New", Courier, monospace;
+}

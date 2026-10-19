@@ -124,10 +124,13 @@
     }
     </script>
 
-    <!-- Fonts (Adobe Typekit: Open Sans / Bebas Neue) -->
+    <!-- Fonts (Adobe Typekit: courier-new) -->
+    <link rel="preconnect" href="https://use.typekit.net">
     <link rel="preconnect" href="https://use.typekit.net" crossorigin>
-    <link rel="preconnect" href="https://p.typekit.net" crossorigin>
-    <link rel="stylesheet" href="https://use.typekit.net/bjk3lkx.css">
+    <link rel="preconnect" href="https://p.typekit.net">
+    <!-- Loaded without blocking render; personal.css falls back to the system Courier New meanwhile -->
+    <link rel="preload" href="https://use.typekit.net/bjk3lkx.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://use.typekit.net/bjk3lkx.css"></noscript>
 
     <!-- Styles -->
     <link rel="stylesheet" href="assets/css/wp-blocks.css">
